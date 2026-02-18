@@ -4,10 +4,10 @@ const recolorFirstCardButton = document.getElementById(
   "recolor-first-card-button",
 );
 const firstCatalogCard = document.querySelector(".product-card");
-const firstCardHashColor = "#cfcfdc";
+const greyHashColor = "#cfcfdc";
 
 recolorFirstCardButton.addEventListener("click", () => {
-  firstCatalogCard.style.backgroundColor = firstCardHashColor;
+  firstCatalogCard.style.backgroundColor = greyHashColor;
 });
 
 // Покраска всех карточек
