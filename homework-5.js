@@ -18,7 +18,7 @@ function speedCheck(speed) {
 // Покупка в магазине
 const product = "Smartphone";
 let price = 14000;
-productStore(14000);
+buyStoreProduct(14000);
 function buyStoreProduct(budget) {
   if (budget < 0) {
     console.log("Бюджет не может быть отрицательным");
