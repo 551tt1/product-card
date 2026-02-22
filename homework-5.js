@@ -1,11 +1,11 @@
 // Функция, которая принимает 2 параметра
 function showTemperatureCity(city, grads) {
-  return console.log(`Сейчас в ${city} - ${grads} градусов по Цельсию`);
+  console.log(`Сейчас в ${city} - ${grads} градусов по Цельсию`);
 }
 
 // Функция сравнения со скоростью света
 const LIGHT_SPEED = 299792458;
-function speedCheck(speed) {
+function compareLightSpeed(speed) {
   if (speed > LIGHT_SPEED) {
     console.log("Сверхсветовая скорость");
   } else if (speed === LIGHT_SPEED) {
