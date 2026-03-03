@@ -29,7 +29,7 @@ setMaxSpeed(car);
 
 //6.6
 function outputPropertyValue(objectName, objectProperty) {
-  console.log(this.objectProperty);
+  console.log(objectName[objectProperty]);
 }
 //6.7
 const array = ["Bread", "Milk", "Meat", "Cheese"];
