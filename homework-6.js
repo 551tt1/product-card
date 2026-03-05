@@ -28,91 +28,88 @@ function setMaxSpeed(objectName) {
 setMaxSpeed(car);
 
 //6.6
-function outputPropertyValue(objectName, objectProperty) {
-  console.log(objectName[objectProperty]);
+function getObectPropertyValue(object, objectProperty) {
+  return object[objectProperty];
 }
 //6.7
 const array = ["Bread", "Milk", "Meat", "Cheese"];
 //6.8
-const library = [
+const bookLibrary = [
   {
-    bookName: "1984",
-    bookAuthor: "Джордж Оруэлл",
-    bookPublicationYear: 1949,
-    bookCoverColor: "серый",
-    bookGenre: "антиутопия",
+    name: "1984",
+    author: "Джордж Оруэлл",
+    publicationYear: 1949,
+    coverColor: "серый",
+    genre: "антиутопия",
   },
   {
-    bookName: "Гордость и предубеждение",
-    bookAuthor: "Джейн Остин",
-    bookPublicationYear: 1813,
-    bookCoverColor: "светло-зелёный",
-    bookGenre: "роман",
+    name: "Гордость и предубеждение",
+    author: "Джейн Остин",
+    publicationYear: 1813,
+    coverColor: "светло-зелёный",
+    genre: "роман",
   },
   {
-    bookName: "Война и мир",
-    bookAuthor: "Лев Толстой",
-    bookPublicationYear: 1869,
-    bookCoverColor: "тёмно-зелёный",
-    bookGenre: "исторический роман",
+    name: "Война и мир",
+    author: "Лев Толстой",
+    publicationYear: 1869,
+    coverColor: "тёмно-зелёный",
+    genre: "исторический роман",
   },
   {
-    bookName: "Преступление и наказание",
-    bookAuthor: "Фёдор Достоевский",
-    bookPublicationYear: 1866,
-    bookCoverColor: "бордовый",
-    bookGenre: "психологический роман",
+    name: "Преступление и наказание",
+    author: "Фёдор Достоевский",
+    publicationYear: 1866,
+    coverColor: "бордовый",
+    genre: "психологический роман",
   },
   {
-    bookName: "451 градус по Фаренгейту",
-    bookAuthor: "Рэй Брэдбери",
-    bookPublicationYear: 1953,
-    bookCoverColor: "оранжевый",
-    bookGenre: "научная фантастика",
+    name: "451 градус по Фаренгейту",
+    author: "Рэй Брэдбери",
+    publicationYear: 1953,
+    coverColor: "оранжевый",
+    genre: "научная фантастика",
   },
 ];
 
 library.push(
   {
-    bookName: "Старик и море",
-    bookAuthor: "Эрнест Хемингуэй",
-    bookPublicationYear: 1952,
-    bookCoverColor: "синий",
-    bookGenre: "повесть",
+    name: "Старик и море",
+    author: "Эрнест Хемингуэй",
+    publicationYear: 1952,
+    coverColor: "синий",
+    genre: "повесть",
   },
 );
 //6.9
-const library2 = [
+const libraryStarWarsBook = [
   {
-    bookName: "Наследник Империи",
-    bookAuthor: "Тимоти Захн",
-    bookPublicationYear: 1991,
-    bookCoverColor: "чёрный",
-    bookGenre: "sci-fi",
+    name: "Наследник Империи",
+    author: "Тимоти Захн",
+    publicationYear: 1991,
+    coverColor: "чёрный",
+    genre: "sci-fi",
   },
   {
-    bookName: "Тёмная сила восстаёт",
-    bookAuthor: "Тимоти Захн",
-    bookPublicationYear: 1992,
-    bookCoverColor: "тёмно-серый",
-    bookGenre: "sci-fi",
+    name: "Тёмная сила восстаёт",
+    author: "Тимоти Захн",
+    publicationYear: 1992,
+    coverColor: "тёмно-серый",
+    genre: "sci-fi",
   },
   {
-    bookName: "Последний полёт «Звезды Смерти»",
-    bookAuthor: "Тимоти Захн",
-    bookPublicationYear: 1993,
-    bookCoverColor: "красный",
-    bookGenre: "sci-fi",
+    name: "Последний полёт «Звезды Смерти»",
+    author: "Тимоти Захн",
+    publicationYear: 1993,
+    coverColor: "красный",
+    genre: "sci-fi",
   },
 ];
 
-const bigLibrary = library.concat(library2);
+const bigLibrary = bookLibrary.concat(libraryStarWarsBook);
 
 //6.10
-const rareLibrary = bigLibrary.map(function (element, index, array) {
-  if (array[index].bookPublicationYear <= 1950) {
-    return array[index] = { ...element, isRare: true };
-  } else {
-    return array[index] = { ...element, isRare: false };
-  }
-});
+const rareLibrary = bigLibrary.map(book => ({
+  ...book,
+  isRare: book.publicationYear <= 1950
+}));
