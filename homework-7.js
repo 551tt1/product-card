@@ -16,10 +16,9 @@ reverseArray(stringArray);
 import { userComments } from "./comments.js";
 //.7
 userComments.filter(user => {
-  if(user.email.includes('.com')) {
-    console.log(user);
-  }
+  return user.email.includes('.com');
 });
+console.log(userComments);
 //.8
 const modifiedPostIDUsers = userComments.map(user => ({...user, postId: user.id <= 5 ? 2: 1}));
 //.9
