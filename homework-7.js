@@ -1,6 +1,7 @@
 //.2
 const numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const filteredNumbers = numbersArray.filter(number => number >= 5);
+console.log(filteredNumbers);
 //.3
 const stringArray = ["книга", "ручка", "тетрадь", "урок"];
 console.log(stringArray.includes("книга"));
@@ -14,7 +15,7 @@ reverseArray(stringArray);
 //.6
 import { userComments } from "./comments.js";
 //.7
-userComments.forEach(user => {
+userComments.filter(user => {
   if(user.email.includes('.com')) {
     console.log(user);
   }
@@ -33,6 +34,7 @@ const emailListByReduce = userComments.reduce((acc, comment) => {
   acc.push(comment.email);
   return acc;
 }, []);
+console.log(emailListByReduce);
 const emailListByMap = userComments.map(comment => comment.email);
 
 //.12
