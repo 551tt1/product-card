@@ -72,7 +72,7 @@ const bookLibrary = [
   },
 ];
 
-library.push(
+bookLibrary.push(
   {
     name: "Старик и море",
     author: "Эрнест Хемингуэй",
