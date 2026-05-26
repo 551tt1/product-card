@@ -85,25 +85,4 @@ function renderProductCards(countOfCards, productCards) {
     productCardsWrapper.insertAdjacentHTML("beforeend", cardHTML);
 
   });
-  
-
-  // productCards.slice(0,countOfCards).forEach( productCard => {
-  //   const cloneProductCards = productCardsTemplate.content.cloneNode(true); 
-  //   const img = cloneProductCards.querySelector('.product-card__img');
-  //   img.src = `images/${productCard.image}.png`;
-  //   img.alt = productCard.alt;
-  //   cloneProductCards.querySelector('.product-card__title').textContent = productCard.title; 
-  //   cloneProductCards.querySelector('.product-card__for-skin').textContent = productCard.skinType; 
-  //   cloneProductCards.querySelector('.product-card__descr').textContent = productCard.description; 
-  //   const componentsList = cloneProductCards.querySelector(".product-card__components");
-  //   productCard.composition.forEach( element => {
-  //     const li = document.createElement('li');
-  //     li.textContent = element;
-  //     componentsList.appendChild(li);
-  //   });
-  //   cloneProductCards.querySelector('.product-card__price').textContent = "Цена";
-  //   cloneProductCards.querySelector('.product-card__price-value').textContent = `${productCard.price} \u20BD`;
-  //   productCardsWrapper.appendChild(cloneProductCards);
-  //   console.log(productCardsWrapper);
-  // })
 }
