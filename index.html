@@ -8,11 +8,40 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="styles/style.css">
   <title>Каталог товаров</title>
 </head>
 
 <body>
+  <button id="registration-modal-btn" type="button">Регистрация</button>
+  <div class="overlay">
+    <div class="modal">
+      <button id="close-modal-btn" type="button" class="modal-close">×</button>
+      <form id="registration-form" action="" method="post">
+        <h2>Регистрация</h2>
+        <label for="modal-name">Имя:</label>
+        <input id="modal-name" name="name" type="text" placeholder="Введи имя..." required>
+
+        <label for="modal-surname">Фамилия:</label>
+        <input id="modal-surname" name="surname" type="text" placeholder="Введи фамилию..." required>
+
+        <label for="modal-birthdate">Дата рождения:</label>
+        <input id="modal-birthdate" name="birthdate" type="date" min="1900-01-01" max="2026-06-06" required>
+
+        <label for="modal-login">Логин:</label>
+        <input id="modal-login" name="login" type="text" placeholder="Введи логин..." required>
+
+        <label for="modal-password">Пароль:</label>
+        <input id="modal-password" name="password" type="password" placeholder="Введи пароль..." minlength="6" required>
+
+        <label for="modal-confirm-password">Подтверите пароль:</label>
+        <input id="modal-confirm-password" name="confirm-password" type="password" placeholder="Повторите пароль..."
+          required>
+        <button class="register-submit-btn" type="submit">Зарегистрироваться</button>
+      </form>
+    </div>
+  </div>
+
   <div class="all-elements bg-img-dandelions">
     <h1 class="product-selection__title">Выбери свой продукт</h1>
     <div class="buttons">
@@ -22,21 +51,44 @@
       <button id="self-recolor-button">Покрасить кнопку</button>
     </div>
 
-
     <div class="product-card-wrapper"></div>
-
-    <template id="product-card-template">
-      <div class="product-card">
-        <img class="product-card__img" src alt>
-        <p class="product-card__for-skin"></p>
-        <h3 class="product-card__title"></h3>
-        <p class="product-card__descr">.</p>
-        <ul class="product-card__components" type="circle"></ul>
-        <span class="product-card__price"></span>
-        <span class="product-card__price-value"></span>
-      </div>
-    </template>
   </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-content__text-content"> <!--левая-->
+        <p id="footer-content__text-content-head">Product Cards</p>
+        <p id="footer-content__text-content-par">У нас самые лучшие продукты для кожи!</p>
+        <div class="footer-content__icons">
+          <a href="" target="_blank"><img src="images/tg-icon.png" alt="tg-icon" width="24" height="14"></a>
+          <a href="" target="_blank"><img src="images/vk-icon.png" alt="vk-icon" width="24" height="14"></a>
+        </div>
+      </div>
+      <div class="footer-content__subscribe-section"> <!--центр-->
+        <label for="email-input">Подпишись на наши акции:</label>
+        <form method="post" action="" class="subscribe-mailing-form" enctype="text/plain">
+          <input id="email-input" name="email-input" type="email" placeholder="Введи Email...">
+          <span id="divider">|</span>
+          <button id="subscribe-emailing-btn" type="submit">Подписаться</button>
+        </form>
+      </div>
+      <nav class="footer-nav"> <!--правая-->
+        <h2 class="footer-nav__header">Быстрые ссылки</h2>
+        <ul class="footer-nav__list">
+          <li class="footer-nav__li"><a href="#">Главная</a></li>
+          <li class="footer-nav__li"><a href="#">Магазин</a></li>
+          <li class="footer-nav__li"><a href="#">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!--низ-->
+    <div class="footer-bottom">
+      <hr id="footer-hr">
+      <div class="footer-email">
+        <p>www.product-cards.com©all right reserve</p>
+      </div>
+    </div>
+  </footer>
 </body>
 
 <script src="js/script.js"></script>
@@ -44,5 +96,6 @@
 <script src="js/homework-6.js"></script>
 <script src="js/homework-7.js" type="module"></script>
 <script src="js/homework-8.js" type="module"></script>
+<script src="js/homework-9.js"></script>
 
 </html>
