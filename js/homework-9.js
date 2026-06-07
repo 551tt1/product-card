@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const regForm = document.querySelector('#registration-form');
-    
+    let user = null;
     regForm.addEventListener('submit', (event) => {
       event.preventDefault();
       
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert("Регистрация отклонена!")
         return;
       }
-      const user = {                    
+      user = {                    
         name: document.getElementById('modal-name').value,
         surname: document.getElementById('modal-surname').value,
         birthdate: document.getElementById('modal-birthdate').value,  
