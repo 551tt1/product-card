@@ -3,7 +3,7 @@ import { productCards } from "./product-cards.js";
 const reducedProductCards = productCards.reduce((acc, card) => {
   acc.push({
     title: card.title,
-    desc: card.desc
+    desc: card.description
   })
   return acc;
 }, []);
@@ -19,7 +19,6 @@ function showProductCards() {
 }
 
 function renderProductCards(countOfCards, productCards) {
-  const productCardsTemplate = document.querySelector("#product-card-template");
   const productCardsWrapper = document.querySelector(".product-card-wrapper");
 
   productCards.slice(0, countOfCards).forEach(productCard => {
