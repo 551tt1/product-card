@@ -4,6 +4,19 @@ class Drink {
     this.name = name;
     this.volume = volume;
     this.cost = cost;
+  };
+  getInfo(){ };
+  getTemperature(){ };
+  setTemperature(temperature){ };
+  #makeDrink() { };
+  serveDrink(){ };
+};
+
+class Soda extends Drink {
+  #temperature;
+  constructor(name, volume, cost, flavor) {
+    super(name, volume, cost);
+    this.flavor = flavor;
   }
   getInfo(){
     return [ this.name, this.volume, this.cost, this.getTemperature() ];
@@ -23,31 +36,57 @@ class Drink {
   }
 }
 
-class Soda extends Drink {
-  #temperature = 10;
-  constructor(name, volume, cost, flavor) {
-    super(name, volume, cost);
-    this.flavor = flavor;
-  }
-}
-
 class Coffee extends Drink {
-  #temperature = 70;
+  #temperature;
   constructor(name, volume, cost, typeOfGrain, typeOfMilk, syrop){
     super(name, volume, cost);
     this.typeOfGrain = typeOfGrain;
     this.typeOfMilk = typeOfMilk;
     this.syrop = syrop;
   }
+
+  getInfo(){
+    return [ this.name, this.volume, this.cost, this.getTemperature() ];
+  }
+  getTemperature(){
+    return this.#temperature;
+  }
+  setTemperature(temperature){
+    this.#temperature = temperature;
+  }
+  #makeDrink() {
+    console.log(this.getInfo() + " is maden");
+  }
+  serveDrink(){
+    this.#makeDrink();
+    console.log(this.getInfo() + " served");
+  }
 }
 
 class Tea extends Drink {
-  #temperature = 80;
+  #temperature;
   constructor(name, volume, cost, teaType, typeOfMilk){
       super(name, volume, cost);
       this.teaType = teaType;
       this.typeOfMilk = typeOfMilk;
    }
+
+  getInfo(){
+    return [ this.name, this.volume, this.cost, this.getTemperature() ];
+  }
+  getTemperature(){
+    return this.#temperature;
+  }
+  setTemperature(temperature){
+    this.#temperature = temperature;
+  }
+  #makeDrink() {
+    console.log(this.getInfo() + " is maden");
+  }
+  serveDrink(){
+    this.#makeDrink();
+    console.log(this.getInfo() + " served");
+  }
 }
 
 //.4
