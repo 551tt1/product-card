@@ -28,7 +28,7 @@ class Smartphone extends Telephone {
   }
 }
 
-const modal = new Modal("modal");
+const modal = new Modal("registration-modal");
 const form = new Form("registration-form");
 
 document.querySelector("#registration-form").addEventListener("submit", (event) => {
