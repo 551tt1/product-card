@@ -8,3 +8,4 @@ import './product-cards.js';
 import './script.js';
 import './Modal.js';
 import './homework-11.js';
+import './homework-12.js';
