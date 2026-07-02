@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Иван",
+    "surname": "Петров",
+    "email": "ivan.petrov@example.com",
+    "age": 20
+  },
+  {
+    "id": 2,
+    "name": "Варвара",
+    "surname": "Сидорова",
+    "email": "varvara.sidorova@example.com",
+    "age": 24
+  },
+  {
+    "id": 3,
+    "name": "Петр",
+    "surname": "Петров",
+    "email": "petr.petrov@example.com",
+    "age": 40
+  },
+  {
+    "id": 4,
+    "name": "Анна",
+    "surname": "Каренина",
+    "email": "anna.karenina@example.com",
+    "age": 30
+  }
+]
