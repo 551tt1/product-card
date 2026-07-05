@@ -1,6 +1,7 @@
 import { loadingWindow } from "../js/loadingWindow.js";
 
-if (JSON.parse(localStorage.getItem("users")) !== null) {
+const users = JSON.parse(localStorage.getItem("users"));
+if (users && users.length > 0) {
   console.log("already exist");
   const users = JSON.parse(localStorage.getItem("users"));
   renderUsers(users);
@@ -23,9 +24,9 @@ if (JSON.parse(localStorage.getItem("users")) !== null) {
         }, 2000);
       });
     })
-    .catch((error) => {
-      alert("Ошибка при загрузке данных:", error);
+    .catch(() => {
       loading.windowRemove();
+      loading.windowError();
     });
 }
 
