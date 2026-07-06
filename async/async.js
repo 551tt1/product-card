@@ -2,34 +2,40 @@ import { loadingWindow } from "../js/loadingWindow.js";
 
 const users = JSON.parse(localStorage.getItem("users"));
 if (users && users.length > 0) {
-  console.log("already exist");
-  const users = JSON.parse(localStorage.getItem("users"));
   renderUsers(users);
 } else {
-  const loading = new loadingWindow();
-  fetch("./users.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Ошибка загрузки");
-      }
-      return response.json();
-    })
-    .then((users) => {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          loading.windowRemove();
-          localStorage.setItem("users", JSON.stringify(users));
-          renderUsers(users);
-          resolve(users);
-        }, 2000);
-      });
-    })
-    .catch(() => {
-      loading.windowRemove();
-      loading.windowError();
-    });
+  loadUsers();
 }
 
+function loadUsers() {
+  const users = JSON.parse(localStorage.getItem("users"));
+  if (users && users.length > 0) {
+    renderUsers(users);
+  } else {
+    const loading = new loadingWindow();
+    fetch("./users.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Ошибка загрузки");
+        }
+        return response.json();
+      })
+      .then((users) => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            loading.windowRemove();
+            localStorage.setItem("users", JSON.stringify(users));
+            renderUsers(users);
+            resolve(users);
+          }, 2000);
+        });
+      })
+      .catch(() => {
+        loading.windowRemove();
+        loading.windowError();
+      });
+  }
+}
 function renderUsers(users) {
   const wrap = document.querySelector(".user-cards-wrapper");
   if (users.length === 0) {
@@ -55,10 +61,6 @@ function renderUsers(users) {
       deleteBtn.addEventListener("click", (event) => {
         let idCard = +event.target.dataset.id;
         const users = JSON.parse(localStorage.getItem("users"));
-        if (users === null) {
-          renderUsers([]);
-          return;
-        }
         const newUsers = users.filter((user) => {
           return user.id !== idCard;
         });
@@ -75,5 +77,5 @@ deleteAllCardsBtn.addEventListener("click", () => {
 });
 const getAllCardsBtn = document.querySelector("#get-all-cards-btn");
 getAllCardsBtn.addEventListener("click", () => {
-  console.log(JSON.parse(localStorage.getItem("users")));
+  loadUsers();
 });
